@@ -4,8 +4,9 @@ This package launches gazebo world, Fetch robot, table and block on the table. T
 
 <img src="pics/Fetch_grasp_pick_hold_shake_place.gif" align="middle">
 
-`roslaunch fetch_tufts pickplace_playground.launch`
-`roslaunch fetch_tufts pick_and_place_tufts.launch num_of_run:="natural number"`
+`roslaunch fetch_tufts pickplace_playground.launch` <br>
 
-Example:
+`roslaunch fetch_tufts pick_and_place_tufts.launch num_of_run:="natural number"` <br>
+
+Example: <br>
 `roslaunch sawyer_tufts pick_and_place_tufts.launch num_of_run:=2`
