@@ -1,0 +1,35 @@
+<launch>
+
+  <!-- Include to load Fetch in-built models like demo_cube, test_zone -->
+  <env name="GAZEBO_MODEL_PATH" value="$(find fetch_gazebo)/models:$(optenv GAZEBO_MODEL_PATH)" />
+
+  <arg name="robot" default="fetch"/>
+  <arg name="debug" default="false"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+
+  <!-- Start Gazebo with a blank world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="headless" value="$(arg headless)"/>
+    <!-- Load table -->
+    <arg name="world_name" value="$(find fetch_tufts)/worlds/test_zone_pick_place.sdf"/>
+  </include>
+
+  <!-- Load the robot -->
+  <!-- This calls prepare_simulated_robot_pick_place.py -->
+  <include file="$(find fetch_tufts)/launch/include/$(arg robot)_pp.launch.xml" />
+
+  <!-- Run Rviz and load the default config to see the state of the move_group node -->
+  <!-- <include file="$(find fetch_moveit_config)/launch/moveit_rviz.launch">
+    <arg name="config" value="true"/>
+    <arg name="debug" value="$(arg debug)"/>
+  </include> -->
+
+  <!-- Start the Fetch pick and place-->
+  <!-- <node name="pick_and_place_tufts" pkg="fetch_tufts" type="pick_and_place_tufts.py" args= "$(arg num_of_run)"  output="screen"/> -->
+
+</launch>

@@ -1,0 +1,6 @@
+<launch>
+
+  <!-- Start the Fetch pick and place-->
+  <node name="pick_and_place_tufts" pkg="fetch_tufts" type="pick_and_place_tufts.py" args= "$(arg num_of_run)"  output="screen"/>
+
+</launch>
