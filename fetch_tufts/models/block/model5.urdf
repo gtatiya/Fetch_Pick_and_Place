@@ -2,8 +2,8 @@
   <link name="block">
     <inertial>
       <origin xyz="0.025 0.025 0.025" />
-      <mass value="2.5" />
-      <inertia  ixx="0.00084375" ixy="0.0"  ixz="0.0"  iyy="0.00084375"  iyz="0.0"  izz="0.00084375" />
+      <mass value="0.25" />
+      <inertia  ixx="0.000084375" ixy="0.0"  ixz="0.0"  iyy="0.000084375"  iyz="0.0"  izz="0.000084375" />
     </inertial>
     <visual>
       <origin xyz="0.025 0.025 0.025"/>
@@ -19,7 +19,7 @@
     </collision>
   </link>
   <gazebo reference="block">
-    <material>Gazebo/RedEmissive</material>
+    <material> Gazebo/RedBright </material>
      <mu1>1000</mu1>
      <mu2>1000</mu2>
   </gazebo>

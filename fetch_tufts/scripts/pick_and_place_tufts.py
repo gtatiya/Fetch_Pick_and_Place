@@ -233,23 +233,16 @@ if __name__ == "__main__":
     head_joint_positions = [0.0, 0.0]
 
 
-    # 7 to 18+1
-    # model7: table at z -0.08 (Y50) COMPLETED
-    # model8: table at z -0.08 (Y50) COMPLETED
-    # model9: table at z -0.08 (Lab2) COMPLETED
-    # model10: table at z -0.08 (Lab2) COMPLETED
-    # model11: table at z -0.08 (Lab3) COMPLETED
-    # model12: table at z -0.08 (Y50) COMPLETED
-    # model13: table at z -0.095 (Lab2) Z STILL -0.08 COMPLETED
-    # model14: table at z -0.08 (Lab3) COMPLETED
-    # model15: table at z -0.08 (Lab2) COMPLETED
-    # model16: table at z -0.08 (Lab3) COMPLETED
-    # model17: table at z -0.08 (Lab3)
-    # model18: table at z -0.08 (Lab3) COMPLETED
-    for x in range(17, 17+1):
+    # 1 to 25+1
+    # model1: table at z -0.08 (Y50) COMPLETED
+    # model2: table at z -0.08 (Y50) COMPLETED
+    # model3: table at z -0.08 (Y50) COMPLETED
+    # model4: table at z -0.08 (Y50) 
+    block_no = 4
+    for x in range(block_no, block_no+1):
         for _ in range(0, num_of_run):
             print("Picking Block: ", x)
-            filename = str(x-7)
+            filename = str(x) #str(x-7)
 
             block_path = os.path.join(PATH, 'models', 'block', 'model'+str(x)+'.urdf')
             block_name = 'block'+str(x)
